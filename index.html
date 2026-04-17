@@ -28,4 +28,644 @@
 
         body {
             padding-top: env(safe-area-inset-top);
-            padding-bottom:​​​​​​​​​​​​​​​​
+            padding-bottom: env(safe-area-inset-bottom);
+            padding-left: env(safe-area-inset-left);
+            padding-right: env(safe-area-inset-right);
+        }
+
+        #root {
+            height: 100%;
+            width: 100%;
+            overflow: auto;
+            -webkit-user-select: none;
+            user-select: none;
+        }
+
+        .container {
+            padding: 16px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 20px;
+            font-weight: 600;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+
+        h3, h4 {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+            overflow-x: auto;
+            padding-bottom: 8px;
+        }
+
+        button {
+            padding: 10px 15px;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.2s;
+            -webkit-appearance: none;
+            appearance: none;
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+
+        button:active {
+            transform: scale(0.95);
+        }
+
+        .btn-primary {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        .btn-primary.active {
+            background-color: #45a049;
+            box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.2);
+        }
+
+        .btn-secondary {
+            background-color: #ddd;
+            color: #333;
+        }
+
+        .btn-danger {
+            background-color: #ff6b6b;
+            color: white;
+            padding: 5px 10px;
+            font-size: 12px;
+            flex-shrink: 0;
+        }
+
+        .btn-reset {
+            background-color: #ff6b6b;
+            color: white;
+            padding: 10px 20px;
+        }
+
+        .btn-add {
+            background-color: #2196F3;
+            color: white;
+            padding: 10px 20px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 12px;
+            padding: 16px;
+            margin-bottom: 16px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        .slider-group {
+            margin-bottom: 16px;
+        }
+
+        .slider-label {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 6px;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        input[type="range"] {
+            width: 100%;
+            height: 8px;
+            border-radius: 5px;
+            background: #e0e0e0;
+            outline: none;
+            -webkit-appearance: none;
+            appearance: none;
+            cursor: pointer;
+        }
+
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #4CAF50;
+            cursor: pointer;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+        }
+
+        input[type="range"]::-moz-range-thumb {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #4CAF50;
+            cursor: pointer;
+            border: none;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 14px;
+            font-family: inherit;
+            margin-bottom: 10px;
+            -webkit-appearance: none;
+            appearance: none;
+        }
+
+        input[type="text"]:focus {
+            outline: none;
+            border-color: #4CAF50;
+            box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.1);
+        }
+
+        .input-group {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 10px;
+        }
+
+        .input-group input {
+            flex: 1;
+            margin-bottom: 0;
+        }
+
+        .input-group button {
+            flex-shrink: 0;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background-color: #eee;
+            border-radius: 5px;
+            overflow: hidden;
+            margin-top: 8px;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background-color: #4CAF50;
+            transition: width 0.3s ease;
+        }
+
+        .progress-text {
+            font-size: 18px;
+            font-weight: 700;
+            color: #4CAF50;
+            margin: 10px 0;
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        .project-card {
+            background: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 12px;
+        }
+
+        .project-name {
+            font-weight: 600;
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+
+        .empty-state {
+            text-align: center;
+            color: #999;
+            padding: 40px 20px;
+        }
+
+        .doc-date-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 16px;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+
+        .header h4 {
+            margin: 0;
+            flex: 1;
+        }
+
+        .tabs {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #ddd;
+            overflow-x: auto;
+        }
+
+        .tab {
+            padding: 12px 20px;
+            border: none;
+            background: none;
+            border-bottom: 3px solid transparent;
+            color: #666;
+            font-weight: 600;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.2s;
+        }
+
+        .tab.active {
+            color: #4CAF50;
+            border-bottom-color: #4CAF50;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 12px;
+            }
+
+            h1 {
+                font-size: 20px;
+            }
+
+            h2 {
+                font-size: 18px;
+            }
+
+            .project-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .doc-date-container {
+                grid-template-columns: 1fr;
+            }
+
+            button {
+                font-size: 13px;
+                padding: 8px 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const ProjectTracker = () => {
+            const scriptPhases = [
+                { id: 'logline', name: 'ログライン' },
+                { id: 'synopsis', name: 'シノプシス' },
+                { id: 'longsynopsis', name: 'ロングシノプシス' },
+                { id: 'plot', name: 'プロット' },
+                { id: 'script', name: '脚本' }
+            ];
+
+            const docProjectPhases = [
+                { id: '素材確認', name: '素材確認' },
+                { id: '書き起こし翻訳', name: '書き起こしと翻訳' },
+                { id: 'ラフ編', name: 'ラフ編' }
+            ];
+
+            const [scriptProjects, setScriptProjects] = React.useState(() => {
+                const saved = localStorage.getItem('scriptProjects');
+                return saved ? JSON.parse(saved) : [
+                    { id: 'p1', name: '私たちが欲しかったすべてのもの' },
+                    { id: 'p2', name: '愛のひとつ' },
+                    { id: 'p3', name: '夜を着る' },
+                    { id: 'p4', name: 'フリードの世界' }
+                ];
+            });
+
+            const [scriptProgress, setScriptProgress] = React.useState(() => {
+                const saved = localStorage.getItem('scriptProgress');
+                if (saved) return JSON.parse(saved);
+                
+                const initial = {};
+                scriptProjects.forEach(proj => {
+                    initial[proj.id] = {};
+                    scriptPhases.forEach(phase => {
+                        initial[proj.id][phase.id] = 0;
+                    });
+                });
+                return initial;
+            });
+
+            const [docProgress, setDocProgress] = React.useState(() => {
+                const saved = localStorage.getItem('docProgress');
+                return saved ? JSON.parse(saved) : {};
+            });
+
+            const [selectedProject, setSelectedProject] = React.useState('p1');
+            const [newDocDate, setNewDocDate] = React.useState('');
+            const [newProjectName, setNewProjectName] = React.useState('');
+            const [activeTab, setActiveTab] = React.useState('script');
+
+            React.useEffect(() => {
+                localStorage.setItem('scriptProjects', JSON.stringify(scriptProjects));
+            }, [scriptProjects]);
+
+            React.useEffect(() => {
+                localStorage.setItem('scriptProgress', JSON.stringify(scriptProgress));
+            }, [scriptProgress]);
+
+            React.useEffect(() => {
+                localStorage.setItem('docProgress', JSON.stringify(docProgress));
+            }, [docProgress]);
+
+            const updateScriptProgress = (projectId, phaseId, value) => {
+                setScriptProgress(prev => ({
+                    ...prev,
+                    [projectId]: {
+                        ...prev[projectId],
+                        [phaseId]: Math.min(100, Math.max(0, value))
+                    }
+                }));
+            };
+
+            const updateDocProgress = (date, phase, value) => {
+                setDocProgress(prev => ({
+                    ...prev,
+                    [date]: {
+                        ...prev[date],
+                        [phase]: Math.min(100, Math.max(0, value))
+                    }
+                }));
+            };
+
+            const addScriptProject = () => {
+                if (newProjectName.trim()) {
+                    const newId = 'p' + Date.now();
+                    const newProjects = [...scriptProjects, { id: newId, name: newProjectName }];
+                    setScriptProjects(newProjects);
+                    
+                    setScriptProgress(prev => ({
+                        ...prev,
+                        [newId]: {}
+                    }));
+                    scriptPhases.forEach(phase => {
+                        setScriptProgress(prev => ({
+                            ...prev,
+                            [newId]: { ...prev[newId], [phase.id]: 0 }
+                        }));
+                    });
+                    
+                    setSelectedProject(newId);
+                    setNewProjectName('');
+                }
+            };
+
+            const removeScriptProject = (projectId) => {
+                if (window.confirm('このプロジェクトを削除してもよろしいですか？')) {
+                    const newProjects = scriptProjects.filter(p => p.id !== projectId);
+                    setScriptProjects(newProjects);
+                    
+                    setScriptProgress(prev => {
+                        const newProgress = { ...prev };
+                        delete newProgress[projectId];
+                        return newProgress;
+                    });
+                    
+                    if (selectedProject === projectId) {
+                        setSelectedProject(newProjects[0]?.id || '');
+                    }
+                }
+            };
+
+            const addDocDate = () => {
+                if (newDocDate.trim()) {
+                    setDocProgress(prev => ({
+                        ...prev,
+                        [newDocDate]: { '素材確認': 0, '書き起こし翻訳': 0, 'ラフ編': 0 }
+                    }));
+                    setNewDocDate('');
+                }
+            };
+
+            const removeDocDate = (date) => {
+                setDocProgress(prev => {
+                    const newDoc = { ...prev };
+                    delete newDoc[date];
+                    return newDoc;
+                });
+            };
+
+            const getOverallProgress = (projectId) => {
+                const values = Object.values(scriptProgress[projectId] || {});
+                return values.length > 0 ? Math.round(values.reduce((a, b) => a + b, 0) / values.length) : 0;
+            };
+
+            const selectedProjectName = scriptProjects.find(p => p.id === selectedProject)?.name;
+
+            return (
+                <div className="container">
+                    <h1>📊 ek/project/progress</h1>
+
+                    <div className="tabs">
+                        <button 
+                            className={`tab ${activeTab === 'script' ? 'active' : ''}`}
+                            onClick={() => setActiveTab('script')}
+                        >
+                            📝 脚本系
+                        </button>
+                        <button 
+                            className={`tab ${activeTab === 'doc' ? 'active' : ''}`}
+                            onClick={() => setActiveTab('doc')}
+                        >
+                            🎬 ドキュメンタリー
+                        </button>
+                    </div>
+
+                    {/* 脚本系タブ */}
+                    <div className={`tab-content ${activeTab === 'script' ? 'active' : ''}`}>
+                        <div className="card">
+                            <h4>新しいプロジェクトを追加</h4>
+                            <div className="input-group">
+                                <input
+                                    type="text"
+                                    placeholder="プロジェクト名を入力"
+                                    value={newProjectName}
+                                    onChange={(e) => setNewProjectName(e.target.value)}
+                                    onKeyPress={(e) => e.key === 'Enter' && addScriptProject()}
+                                />
+                                <button onClick={addScriptProject} className="btn-add">追加</button>
+                            </div>
+                        </div>
+                        
+                        <div className="button-group">
+                            {scriptProjects.map(proj => (
+                                <div key={proj.id} style={{display: 'flex', gap: '4px'}}>
+                                    <button
+                                        onClick={() => setSelectedProject(proj.id)}
+                                        className={selectedProject === proj.id ? 'btn-primary active' : 'btn-secondary'}
+                                    >
+                                        {proj.name}
+                                    </button>
+                                    <button
+                                        onClick={() => removeScriptProject(proj.id)}
+                                        className="btn-danger"
+                                    >
+                                        ×
+                                    </button>
+                                </div>
+                            ))}
+                        </div>
+
+                        {selectedProjectName && (
+                            <>
+                                <div className="card">
+                                    <h3>{selectedProjectName}</h3>
+                                    <div className="progress-text">総進捗: {getOverallProgress(selectedProject)}%</div>
+
+                                    {scriptPhases.map(phase => (
+                                        <div key={phase.id} className="slider-group">
+                                            <div className="slider-label">
+                                                <label>{phase.name}</label>
+                                                <span>{scriptProgress[selectedProject]?.[phase.id] || 0}%</span>
+                                            </div>
+                                            <input
+                                                type="range"
+                                                min="0"
+                                                max="100"
+                                                step="10"
+                                                value={scriptProgress[selectedProject]?.[phase.id] || 0}
+                                                onChange={(e) => updateScriptProgress(selectedProject, phase.id, parseInt(e.target.value))}
+                                            />
+                                        </div>
+                                    ))}
+                                </div>
+
+                                <div className="card">
+                                    <h4>全プロジェクト進捗</h4>
+                                    <div className="project-grid">
+                                        {scriptProjects.map(proj => (
+                                            <div key={proj.id} className="project-card">
+                                                <div className="project-name">{proj.name}</div>
+                                                <div className="progress-text" style={{fontSize: '20px'}}>{getOverallProgress(proj.id)}%</div>
+                                                <div className="progress-bar">
+                                                    <div className="progress-fill" style={{width: `${getOverallProgress(proj.id)}%`}}></div>
+                                                </div>
+                                            </div>
+                                        ))}
+                                    </div>
+                                </div>
+                            </>
+                        )}
+                    </div>
+
+                    {/* ドキュメンタリータブ */}
+                    <div className={`tab-content ${activeTab === 'doc' ? 'active' : ''}`}>
+                        <div className="card">
+                            <h4>撮影日を追加</h4>
+                            <div className="input-group">
+                                <input
+                                    type="text"
+                                    placeholder="撮影日（例：2026-04-17）"
+                                    value={newDocDate}
+                                    onChange={(e) => setNewDocDate(e.target.value)}
+                                    onKeyPress={(e) => e.key === 'Enter' && addDocDate()}
+                                />
+                                <button onClick={addDocDate} className="btn-primary">追加</button>
+                            </div>
+                        </div>
+
+                        {Object.keys(docProgress).length > 0 ? (
+                            <div className="doc-date-container">
+                                {Object.entries(docProgress).map(([date, phases]) => (
+                                    <div key={date} className="card">
+                                        <div className="header">
+                                            <h4>{date}</h4>
+                                            <button onClick={() => removeDocDate(date)} className="btn-danger">削除</button>
+                                        </div>
+
+                                        {docProjectPhases.map(phase => (
+                                            <div key={phase.id} className="slider-group">
+                                                <div className="slider-label">
+                                                    <label>{phase.name}</label>
+                                                    <span>{phases[phase.id]}%</span>
+                                                </div>
+                                                <input
+                                                    type="range"
+                                                    min="0"
+                                                    max="100"
+                                                    step="10"
+                                                    value={phases[phase.id]}
+                                                    onChange={(e) => updateDocProgress(date, phase.id, parseInt(e.target.value))}
+                                                />
+                                            </div>
+                                        ))}
+
+                                        <div style={{marginTop: '12px', padding: '10px', backgroundColor: '#f0f0f0', borderRadius: '5px'}}>
+                                            <p style={{margin: 0, fontSize: '14px', fontWeight: 600}}>
+                                                平均進捗: {Math.round((phases['素材確認'] + phases['書き起こし翻訳'] + phases['ラフ編']) / 3)}%
+                                            </p>
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+                        ) : (
+                            <div className="empty-state">
+                                <p>撮影日を追加してください</p>
+                            </div>
+                        )}
+                    </div>
+
+                    {/* リセット */}
+                    <div className="card" style={{marginTop: '40px'}}>
+                        <h4>⚙️ データ管理</h4>
+                        <button
+                            onClick={() => {
+                                if (window.confirm('すべてのデータをリセットしてもよろしいですか？')) {
+                                    localStorage.clear();
+                                    window.location.reload();
+                                }
+                            }}
+                            className="btn-reset"
+                        >
+                            すべてリセット
+                        </button>
+                    </div>
+
+                    <div style={{height: '40px'}}></div>
+                </div>
+            );
+        };
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<ProjectTracker />);
+    </script>
+</body>
+</html>
