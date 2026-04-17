@@ -6,8 +6,8 @@
     <meta name="theme-color" content="#4CAF50">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="apple-mobile-web-app-title" content="脚本進捗管理">
-    <title>脚本プロジェクト進捗管理</title>
+    <meta name="apple-mobile-web-app-title" content="ek/project/progress">
+    <title>ek/project/progress</title>
     <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
     <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
@@ -492,7 +492,7 @@
 
             return (
                 <div className="container">
-                    <h1>📊 脚本プロジェクト進捗管理</h1>
+                    <h1>📊 ek/project/progress</h1>
 
                     <div className="tabs">
                         <button 
@@ -560,6 +560,7 @@
                                                 type="range"
                                                 min="0"
                                                 max="100"
+                                                step="10"
                                                 value={scriptProgress[selectedProject]?.[phase.id] || 0}
                                                 onChange={(e) => updateScriptProgress(selectedProject, phase.id, parseInt(e.target.value))}
                                             />
@@ -620,6 +621,7 @@
                                                     type="range"
                                                     min="0"
                                                     max="100"
+                                                    step="10"
                                                     value={phases[phase.id]}
                                                     onChange={(e) => updateDocProgress(date, phase.id, parseInt(e.target.value))}
                                                 />
